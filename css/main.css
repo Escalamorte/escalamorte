@@ -1,0 +1,198 @@
+html,h1,h2,h3,h4,h5,h6,a{font-family: 'Montserrat', sans-serif;}
+.nav-link , .navbar-brand{cursor: pointer;}
+.nav-link{ margin-right: 1em !important;}
+.nav-link:hover{ background: #f4f4f4;}
+.navbar-collapse{ justify-content: flex-end;}
+.navbar-toggler{  background:#fff !important;}
+.nav-item a:link{
+    text-decoration: none;
+}
+.header{
+    background-image: url("../images/bg_index.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 50%;
+    min-width: 100%;
+}
+.overlay{
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.79);
+}
+.description{
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+.description h1{
+    color:#F97300 ;
+}
+.description p{
+    color:#666;
+    font-size: 20px;
+    width: 50%;
+    line-height: 1.5;
+}
+.description a{
+    border:1px  solid #F97300;
+    background:#F97300;
+    color:#fff;
+}
+.about{
+    margin: 4em 0;
+    padding: 1em;
+    position: relative;
+}
+.about h1{
+    color:#F97300;
+    margin: 2em;
+}
+.about img{
+    max-width: 250px;
+    max-height: 300px;
+    border-radius: 50%;
+}
+.about .desc{
+    padding: 1em;
+    border-left: 4px solid #10828C;
+}
+.about .desc h2{
+    color: #10828C;
+}
+.about .desc p{
+    line-height:2;
+    color:#888;
+}
+.about td {
+    padding: 3px;
+    float: left;
+    font-size: 20px;
+}
+/*Portfolio*/
+.portfolio{
+    margin: 4em 0;
+    position: relative;
+}
+.portfolio h1{
+    color:#F97300;
+    margin: 2em;
+}
+.portfolio img{
+    height: 15rem;
+    width: 100%;
+    margin: 1em;
+}
+/*Blog*/
+.blog{
+    margin: 4em 0;
+    position: relative;
+}
+.blog h1{
+    color:#F97300;
+    margin: 2em;
+}
+.blog .card{
+    box-shadow: 0 0 20px #ccc;
+}
+.blog .card img{
+    /*max-height: 250px;*/
+    max-width: 100%;
+    height: auto;
+    margin: 2px;
+    /*height: 10em;*/
+}
+.blog .card-title{
+    color:#F97300;
+
+}
+.blog .card-body{
+    padding: 1em;
+}
+/*Contact-form*/
+.contact-form{
+    margin: 6em 0;
+    position: relative;
+}
+.contact-form h1{
+    padding:2em 1px;
+    color: #F97300;
+}
+.contact-form h3{
+    padding:2em 1px;
+    color: #F97300;
+}
+.contact-form .right{
+    max-width: 600px;
+}
+.contact-form .right .btn-secondary{
+    background:  #F97300;
+    color: #fff;
+    border:0;
+}
+.contact-form .right .form-control::placeholder{
+    color: #888;
+    font-size: 16px;
+}
+/*Calc*/
+.calc{
+    padding: 6em;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-gap: 1vw;
+    /*background-color: #ffffff;*/
+    /*border: 1px solid white;*/
+    /*border-radius: 15px;*/
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+.calc h1{
+    color: #F97300;
+    text-align: center;
+}
+.screen {
+    width: 100%;
+    height: 150px;
+    padding: 18px;
+    background-color: white;
+}
+.display, .result{
+    width: 100%;
+    font-size: 22px;
+    resize: none;
+    text-align: right;
+    background-color: white;
+    border: none;
+}
+.result {
+    font-size: 32px;
+}
+.calc button[name="plus"]{
+    height: 112px;
+    background:  #F97300;
+}
+.calc button{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    color: black;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.calc button:hover {
+    background-color: #bdc5f0;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}

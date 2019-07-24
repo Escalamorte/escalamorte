@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Calc</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4130aeabaa.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="index.html">My First Page</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Главная<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item btn-group">
+                <a class="btn btn-danger" role="button" aria-haspopup="true" aria-expanded="false" href="index.html#portfolio">
+                    JS Приложения
+                </a>
+                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="calc2.html">JavaScript Calc</a>
+                    <a class="dropdown-item" href="index.html#portfolio">Horoscope</a>
+                    <a class="dropdown-item" href="index.html#portfolio">Game</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" data-value="about" href="index.html#about">Обо мне</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://facebook.com/elnurdadashev" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://m.me/elnurdadashev" target="_blank">
+                    <i class="fab fa-facebook-messenger"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact-form">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="header">
+    <div class="overlay"></div>
+    <div class="calc">
+            <h1>Калькулятор</h1>
+            <p id="test"></p>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <div class="screen" >
+                        <form name="form">
+                            <input name="screen" class="display" disabled>
+                            <hr>
+                            <input name="result" class="result" disabled>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><button name="AC" onclick="clearAll()"><i class="fas fa-trash-alt"></i></button></td>
+                <td><button name="backspace" onclick="backspace()"><i class="fas fa-backspace"></i></button></td>
+                <td><button name="percent" onclick="display('%')"><i class="fas fa-percentage"></i></button></td>
+                <td><button name="divide" onclick="display('/')"><i class="fas fa-divide"></i></button></td>
+            </tr>
+            <tr>
+                <td><button name="seven" onclick="display(7)">7</button></td>
+                <td><button name="eight" onclick="display(8)">8</button></td>
+                <td><button name="nine" onclick="display(9)">9</button></td>
+                <td><button name="times" onclick="display('*')"><i class="fas fa-times"></i></button></td>
+            </tr>
+            <tr>
+                <td><button name="four" onclick="display(4)">4</button></td>
+                <td><button name="five" onclick="display(5)">5</button></td>
+                <td><button name="six" onclick="display(6)">6</button></td>
+                <td><button name="minus" onclick="display('-')"><i class="fas fa-minus"></i></button></td>
+            </tr>
+            <tr>
+                <td><button name="one" onclick="display(1)">1</button></td>
+                <td><button name="two" onclick="display(2)">2</button></td>
+                <td><button name="three" onclick="display(3)">3</button></td>
+                <td rowspan="2"><button name="plus" onclick="display('+')"><i class="fas fa-plus"></i></button></td>
+            </tr>
+            <tr>
+                <td><button name="renew"><i class="fas fa-retweet"></i></button></td>
+                <td><button name="zero" value="0" onclick="display(0)">0</button></td>
+                <td><button name="dot" onclick="display('.')">.</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Contact form -->
+<div class="contact-form" id="contact-form">
+    <div class="container">
+        <h1 class="text-center">Обратная связь</h1>
+        <form>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h3 class="text-center">Написать письмо</h3>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 right">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Ваше имя" name="">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control form-control-lg" placeholder="Email" name="email">
+                    </div>
+                    <div class="form-group">
+         <textarea class="form-control form-control-lg">
+
+         </textarea>
+                    </div>
+                    <input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
