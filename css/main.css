@@ -8,7 +8,7 @@ html,h1,h2,h3,h4,h5,h6,a{font-family: 'Montserrat', sans-serif;}
     text-decoration: none;
 }
 .header{
-    background-image: url("../images/bg_index.jpg");
+    background-image: url("../images/bg_index.webp");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
