@@ -151,8 +151,16 @@ html,h1,h2,h3,h4,h5,h6,a{font-family: 'Montserrat', sans-serif;}
     color: #888;
     font-size: 16px;
 }
+.card{
+    margin: 2px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 /*Calc*/
-.calc{
+.calc, .guess{
     padding: 6em;
     position: relative;
     display: grid;
@@ -164,7 +172,7 @@ html,h1,h2,h3,h4,h5,h6,a{font-family: 'Montserrat', sans-serif;}
     /*border-radius: 15px;*/
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
-.calc h1{
+.calc h1, .guess h1{
     color: #F97300;
     text-align: center;
 }
@@ -208,4 +216,13 @@ html,h1,h2,h3,h4,h5,h6,a{font-family: 'Montserrat', sans-serif;}
 .calc button:hover {
     background-color: #bdc5f0;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#timedate {
+    font: small-caps 43px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    text-align:left;
+    width: 50%;
+    margin: 40px auto;
+    color:#fff;
+    border-left: 3px solid yellow;
+    padding: 20px;
 }
