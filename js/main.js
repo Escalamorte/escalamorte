@@ -23,13 +23,13 @@ function equal() {
     }
 
     let value = document.form.screen.value;
-    var length = value.length - 1;
+    let length = value.length - 1;
 
     console.log("Length is " + length);
     console.log("charAt is " + value.charAt(length));
 }
 function backspace() {
-    var exp = document.form.screen.value;
+    let exp = document.form.screen.value;
     document.form.screen.value = exp.substring(0, exp.length-1);
     equal();
 }
