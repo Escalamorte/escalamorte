@@ -203,7 +203,7 @@ function setCountry() {
     window.randomString = countryArr[Math.round((Math.random() * (countryArr.length-1)))];
     window.randomCnt = randomString.substr(0, randomString.indexOf(";"));
     window.capital = randomString.substr(randomString.lastIndexOf(";")+1);
-    window.flagDir = "images\flags\" + randomCnt + ".png";
+    window.flagDir = "../images/flags/" + randomCnt + ".png";
 
     console.log(randomString);
     console.log(randomCnt);
