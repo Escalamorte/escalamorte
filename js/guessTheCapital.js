@@ -202,8 +202,8 @@ function setCountry() {
 
     window.randomString = countryArr[Math.round((Math.random() * (countryArr.length-1)))];
     window.randomCnt = randomString.substr(0, randomString.indexOf(";"));
-    window.capital = randomString.substr(randomString.lastIndexOf(";")+1);
     window.flagDir = "../images/flags/" + randomCnt + ".png";
+    window.capital = randomString.substr(randomString.lastIndexOf(";")+1).toUpperCase();
 
     console.log(randomString);
     console.log(randomCnt);
@@ -218,23 +218,28 @@ function hideCapital(capital) {
     window.answer = Array.from(capital);
     console.log(answer);
     for (let i = 0; i < answer.length; i++) {
-        console.log(answer[i]);
-        console.log(answer.length);
         if (answer[i] !== "-" || answer[i] !== " " || answer[i] !== "," || answer[i] !== "’"){
             answer[i] = "*";
         }
     }
-    return answer.join("");
+    return answer.join("").toUpperCase();
 }
 function checkAnswer(e) {
     let key = String.fromCharCode(e.keyCode);
-
+    console.log(key);
     for (let i = 0; i < capital.length; i++) {
-        if(capital[i] === key){
-            console.log("right!")
-            window.answer[i] = key;
-
+        if(capital[i] === key.toUpperCase()){
+            window.answer[i] = key.toUpperCase();
         }
     }
     document.getElementById("tdCapital").innerHTML = answer.join("");
+    let capitalGuessed = true;
+    for (let i = 0; i < answer.length ; i++) {
+        if(answer[i] === "*"){
+            capitalGuessed = false;
+        }
+    }
+    if (capitalGuessed) {
+        setCountry()
+    }
 }
