@@ -4,6 +4,8 @@ function hideBtn() {
     setCountry();
 }
 
+let life = 5;
+
 function setCountry() {
 
     let countryArr = [
@@ -200,38 +202,59 @@ function setCountry() {
         "Япония;Токио",
     ]
 
-    window.randomString = countryArr[Math.round((Math.random() * (countryArr.length-1)))];
-    window.randomCnt = randomString.substr(0, randomString.indexOf(";"));
-    window.flagDir = "../images/flags/" + randomCnt + ".png";
-    window.capital = randomString.substr(randomString.lastIndexOf(";")+1).toUpperCase();
+    if (life > 0) {
+        window.randomString = countryArr[Math.round((Math.random() * (countryArr.length - 1)))];
+        window.randomCnt = randomString.substr(0, randomString.indexOf(";"));
+        window.flagDir = "../images/flags/" + randomCnt + ".png";
+        window.capital = randomString.substr(randomString.lastIndexOf(";") + 1).toUpperCase();
 
-    console.log(randomString);
-    console.log(randomCnt);
-    console.log(capital);
+        console.log(randomString);
+        console.log(randomCnt);
+        console.log(capital);
 
-    document.getElementById("tdCountry").innerHTML = randomCnt;
-    document.getElementById("tdCapital").innerHTML = hideCapital(capital);
-    document.getElementById("tdFlag").setAttribute("src", flagDir);
+        document.getElementById("tdCountry").innerHTML = randomCnt;
+        document.getElementById("tdCapital").innerHTML = hideCapital(capital);
+        document.getElementById("tdFlag").setAttribute("src", flagDir);
+        document.getElementById("lifeReminder").innerHTML = lifeReminder();
+    }
 }
 
 function hideCapital(capital) {
     window.answer = Array.from(capital);
-    console.log(answer);
+
     for (let i = 0; i < answer.length; i++) {
-        if (answer[i] !== "-" || answer[i] !== " " || answer[i] !== "," || answer[i] !== "’"){
+        if (answer[i] === "-"){
+            //console.log(answer[i]);
+            answer[i] = "-";
+        } else if (answer[i] === " ") {
+            answer[i] = " ";
+        } else if (answer[i] === ","){
+            answer[i] = ","
+        } else if (answer[i] === "’"){
+            answer[i] = "’";
+        } else {
             answer[i] = "*";
         }
     }
     return answer.join("").toUpperCase();
 }
+
 function checkAnswer(e) {
     let key = String.fromCharCode(e.keyCode);
     console.log(key);
+
+    let letterGuessed = false;
     for (let i = 0; i < capital.length; i++) {
-        if(capital[i] === key.toUpperCase()){
+        if (capital[i] === key.toUpperCase()) {
             window.answer[i] = key.toUpperCase();
+            letterGuessed = true;
         }
     }
+    if (!letterGuessed) {
+        --life;
+        document.getElementById("lifeReminder").innerHTML = lifeReminder();
+    }
+
     document.getElementById("tdCapital").innerHTML = answer.join("");
     let capitalGuessed = true;
     for (let i = 0; i < answer.length ; i++) {
@@ -241,5 +264,16 @@ function checkAnswer(e) {
     }
     if (capitalGuessed) {
         setCountry()
+    }
+}
+function lifeReminder() {
+    if (life >= 5){
+         return "Осталось " + life + " попыток";
+    } else if(life < 5 && life > 1) {
+        return "Осталось " + life + " попытки";
+    } else if (life === 1){
+        return  "Осталось 1 попытка";
+    } else {
+        return "Игра Окончена";
     }
 }
